@@ -1,0 +1,130 @@
+.appointment-detail-modal {
+  z-index: 1050;
+}
+
+.appointment-detail-body {
+  background: linear-gradient(135deg, #bcc0d1 0%, #d4d8e0 100%);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #0b1a3a;
+  padding-bottom: 15px;
+}
+
+.detail-date {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0b1a3a;
+  margin: 0;
+}
+
+.detail-close-btn {
+  background: white;
+  border: none;
+  font-size: 20px;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.detail-close-btn:hover {
+  background: #f0f0f0;
+}
+
+.detail-content {
+  padding: 10px 0;
+}
+
+.detail-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0b1a3a;
+  margin: 15px 0 20px 0;
+  text-align: center;
+}
+
+.detail-section {
+  margin-bottom: 20px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border-left: 4px solid #0c1b40;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #0b1a3a;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.detail-value {
+  color: #333;
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.detail-btn-notes,
+.detail-btn-delete {
+  flex: 1;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.detail-btn-notes {
+  background: linear-gradient(#0c1b40, #08122c);
+  color: white;
+}
+
+.detail-btn-notes:hover {
+  background: linear-gradient(#08122c, #050d1f);
+  color: white;
+}
+
+.detail-btn-delete {
+  background: linear-gradient(#0c1b40, #08122c);
+  color: white;
+}
+
+.detail-btn-delete:hover {
+  background: linear-gradient(#08122c, #050d1f);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .appointment-detail-body {
+    padding: 20px;
+  }
+
+  .detail-title {
+    font-size: 22px;
+  }
+
+  .detail-date {
+    font-size: 18px;
+  }
+}

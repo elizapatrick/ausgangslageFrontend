@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AppointmentModal from "../components/AppointmentModal";
 import DayAppointments from "../components/DayAppointments";
+import AppointmentDetailModal from "../components/AppointmentDetailModal";
 import "./Calender.css";
 import Logo from "../Images/Logo.png";
 import UserIcon from "../Images/user.png";
@@ -67,11 +69,20 @@ function buildCalendar(viewDate, appointments) {
 }
 
 export default function Calender() {
+  const navigate = useNavigate();
   const [viewDate, setViewDate] = useState(new Date(Date.UTC(2025, 10, 1)));
   const [appointments, setAppointments] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedAppointment, setSelectedAppointment] = useState(null);
   const [showDayModal, setShowDayModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [showDetailModal, setShowDetailModal] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("userId");
+    localStorage.removeItem("username");
+    navigate("/");
+  };
 
   const calendarWeeks = useMemo(
     () => buildCalendar(viewDate, appointments),
@@ -188,6 +199,11 @@ export default function Calender() {
           appointments={appointments}
           onDelete={handleDeleteDay}
           onAddNew={() => handleAddNew(selectedDate)}
+          onSelectAppointment={(apt) => {
+            setSelectedAppointment(apt);
+            setShowDetailModal(true);
+            setShowDayModal(false);
+          }}
         />
       )}
 
@@ -195,6 +211,24 @@ export default function Calender() {
         <AppointmentModal
           onClose={() => setShowAddModal(false)}
           onSave={handleSaveAppointment}
+        />
+      )}
+
+      {showDetailModal && selectedAppointment && (
+        <AppointmentDetailModal
+          show={showDetailModal}
+          onClose={() => setShowDetailModal(false)}
+          appointment={selectedAppointment}
+          onEdit={(updated) => {
+            setAppointments((prev) =>
+              prev.map((apt) => (apt === selectedAppointment ? updated : apt))
+            );
+            setShowDetailModal(false);
+          }}
+          onDelete={() => {
+            setAppointments((prev) => prev.filter((apt) => apt !== selectedAppointment));
+            setShowDetailModal(false);
+          }}
         />
       )}
     </div>

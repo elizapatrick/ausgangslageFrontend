@@ -1,7 +1,7 @@
 import { Modal, Button, ListGroup } from "react-bootstrap";
 import "./DayAppointments.css";
 
-export default function DayAppointments({ show, onClose, date, appointments, onDelete, onAddNew }) {
+export default function DayAppointments({ show, onClose, date, appointments, onDelete, onAddNew, onSelectAppointment }) {
   if (!date) return null;
 
   const dayNames = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
@@ -31,7 +31,7 @@ export default function DayAppointments({ show, onClose, date, appointments, onD
           ) : (
             <ListGroup variant="flush">
               {dayAppointments.map((apt, index) => (
-                <ListGroup.Item key={index} className="appointment-item">
+                <ListGroup.Item key={index} className="appointment-item" onClick={() => onSelectAppointment && onSelectAppointment(apt)} style={{ cursor: "pointer" }}>
                   <div className="appointment-info">
                     <span className="appointment-name">{apt.name}: {apt.genre}</span>
                     <span className="appointment-time">{apt.fromTime}</span>

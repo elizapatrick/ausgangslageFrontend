@@ -4,13 +4,41 @@ import "./LoginPage.css";
 
 export default function LogInPage() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log("Login attempt:", { email, password });
+    setError("");
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8080/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Store user info in localStorage
+        localStorage.setItem("userId", data.userId);
+        localStorage.setItem("username", data.username);
+        // Navigate to calendar
+        navigate("/calendar");
+      } else {
+        setError(data.message || "Login fehlgeschlagen");
+      }
+    } catch (err) {
+      setError("Verbindung zum Server fehlgeschlagen. Stellen Sie sicher, dass der Backend-Server läuft.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -21,10 +49,10 @@ export default function LogInPage() {
         <div className="card">
           <form onSubmit={handleLogin}>
             <input
-              type="email"
-              placeholder="E-MAIL-ADRESSE"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="BENUTZERNAME"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
             
@@ -36,9 +64,11 @@ export default function LogInPage() {
               required
             />
             
-            <button type="submit" className="login-btn">
-              ANMELDEN
+            <button type="submit" className="login-btn" disabled={loading}>
+              {loading ? "WIRD ANGEMELDET..." : "ANMELDEN"}
             </button>
+            
+            {error && <div style={{ color: "red", fontSize: "12px", marginTop: "10px", textAlign: "center" }}>{error}</div>}
             
             <span className="register-link" onClick={() => navigate("/registrieren")}>
               Noch keinen Account? Hier Registrieren!
