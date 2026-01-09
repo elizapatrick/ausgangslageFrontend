@@ -54,13 +54,6 @@ export default function AppointmentDetailModal({ show, onClose, appointment, onE
               >
                 Notizen
               </Button>
-              <Button
-                variant="danger"
-                className="detail-btn-delete"
-                onClick={onDelete}
-              >
-                Bearb.
-              </Button>
             </div>
           </div>
         </Modal.Body>

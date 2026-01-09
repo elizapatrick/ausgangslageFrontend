@@ -132,17 +132,14 @@ export default function Calender() {
       <header className="calendar-toolbar">
         <div className="toolbar-left">
           <img src={UserIcon} alt="User" className="user-icon" />
-          <button className="logout-btn">Abmelden</button>
+          <button className="logout-btn" onClick={handleLogout}>Abmelden</button>
         </div>
         <div className="logo-area">
           <img src={Logo} alt="KEMflow Logo" className="logo-img" />
         </div>
-        <div className="toolbar-right">
-          <span className="settings-icon">⚙</span>
-          <button className="add-appointment" onClick={() => handleAddNew(selectedDate)}>
-            ＋ Termin hinzufügen
-          </button>
-        </div>
+        <button className="add-appointment" onClick={() => handleAddNew(selectedDate)}>
+          ＋ Termin hinzufügen
+        </button>
       </header>
 
       <div className="calendar-content">

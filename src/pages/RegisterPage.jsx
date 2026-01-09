@@ -3,20 +3,14 @@ import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
 export default function RegisterPage() {
-  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwörter stimmen nicht überein!");
-      return;
-    }
-    // Add your registration logic here
-    console.log("Registration attempt:", { username, email, password });
   };
 
   return (
