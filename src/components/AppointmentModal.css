@@ -1,0 +1,81 @@
+/* Custom styling for appointment modal */
+.appointment-modal-wrapper .modal-content {
+  background: #e8d7c3;
+  border-radius: 20px;
+  border: none;
+}
+
+.appointment-modal-wrapper .modal-body {
+  padding: 25px 30px;
+}
+
+.appointment-modal-body-bg {
+  background: #e8d7c3;
+}
+
+.appointment-modal-title {
+  font-size: 28px;
+  font-weight: 400;
+  border-bottom: 2px solid #333;
+  padding-bottom: 4px;
+}
+
+.appointment-btn-cancel {
+  border: 1px solid #333;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.appointment-btn-notes,
+.appointment-btn-create {
+  background: #b8d8e8;
+  border: 1px solid #7fa8b8;
+  color: #333;
+  font-weight: 500;
+}
+
+.appointment-btn-notes:hover,
+.appointment-btn-create:hover {
+  background: #a5c9db;
+  border: 1px solid #7fa8b8;
+  color: #333;
+}
+
+.appointment-modal-wrapper .form-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.appointment-modal-wrapper .form-control,
+.appointment-modal-wrapper .form-select {
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.appointment-modal-wrapper .form-control:focus,
+.appointment-modal-wrapper .form-select:focus {
+  border-color: #999;
+  box-shadow: none;
+}
+
+
+.appointment-form-group input,
+.appointment-form-group select {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+  font-family: Arial, sans-serif;
+}
+
+.appointment-form-group input:focus,
+.appointment-form-group select:focus {
+  outline: none;
+  border-color: #999;
+box-shadow: none;
+}

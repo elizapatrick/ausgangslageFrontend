@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #d4d4d4;
+}
+
+.frame {
+  width: 90%;
+  height: 90vh;
+  background: #0b1a3a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 5vh;
+  border-radius: 25px;
+}
+
+.panel {
+  width: 88%;
+  height: 85%;
+  background: #bcc0d1;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-style: italic;
+  color: white;
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  width: 450px;
+  padding: 35px 45px;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card input {
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  font-size: 12px;
+}
+
+.card input::placeholder {
+  font-weight: bold;
+  color: #555;
+}
+
+.login-btn {
+  margin-top: 12px;
+  height: 42px;
+  background: linear-gradient(#0c1b40, #08122c);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
+.login-btn:hover {
+  opacity: 0.95;
+}
+
+.register-link {
+  font-size: 11px;
+  color: #0c1b40;
+  text-decoration: underline;
+  width: fit-content;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.register-link:hover {
+  color: #08122c;
+}

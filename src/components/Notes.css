@@ -1,0 +1,87 @@
+.notes-modal .modal-content {
+  background: #2c3e50;
+  border-radius: 12px;
+  border: none;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.notes-modal-body {
+  padding: 0;
+}
+
+.notes-header {
+  background: #97a5b5;
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  border-radius: 12px 12px 0 0;
+}
+
+.notes-content {
+  background: #2c3e50;
+  padding: 20px;
+}
+
+.notes-title {
+  background: #97a5b5;
+  padding: 10px 16px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.edit-icon {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.notes-textarea {
+  background: #f5e6d3;
+  border: none;
+  border-radius: 0 0 8px 8px;
+  padding: 16px;
+  font-size: 14px;
+  resize: none;
+  min-height: 320px;
+  color: #333;
+}
+
+.notes-textarea:focus {
+  background: #f5e6d3;
+  border: none;
+  box-shadow: none;
+}
+
+.notes-textarea::placeholder {
+  color: #999;
+}
+
+.notes-actions {
+  padding: 16px 0 0 0;
+}
+
+.btn-save-note {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #97a5b5;
+  border: 1px solid #7a8a9a;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.btn-save-note:hover {
+  background: #8594a5;
+  border: 1px solid #7a8a9a;
+  color: white;
+}
